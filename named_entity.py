@@ -12,17 +12,17 @@ if st.button("What is this?"):
 
 st.subheader("Enter a URL")
 url_input = st.text_input("Enter the URL:")
-if st.button("Process URL"):
+if st.button("Process"):
     article = Article(url_input)
     article.download()
     article.parse()
     doc = nlp(article.text)
     displacy.render(doc, style='ent', jupyter=False)
     st.markdown(displacy.render(doc, style='ent', jupyter=False), unsafe_allow_html=True)
-    
-st.subheader("Enter a Paragraph")
+
+st.subheader("Enter a Paragraph")    
 paragraph_input = st.text_area("Enter the Paragraph:")
-if st.button("Process Paragraph"):
+if st.button("Process"):
     doc = nlp(paragraph_input)
     displacy.render(doc, style='ent', jupyter=False)
     st.markdown(displacy.render(doc, style='ent', jupyter=False), unsafe_allow_html=True)
