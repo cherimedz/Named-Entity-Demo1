@@ -12,7 +12,7 @@ if st.button("What is this?"):
 
 st.subheader("Enter a URL")
 url_input = st.text_input("Enter the URL:")
-if st.button("Process"):
+if st.button("Analyze"):
     article = Article(url_input)
     article.download()
     article.parse()
